@@ -22,8 +22,7 @@ namespace BulkyBookWeb.Controllers
         //GET
         public IActionResult Create()
         {
-            IEnumerable<Category> objCategoryList = _db.Categories;
-            return View(objCategoryList);
+            return View();
         }
     }
 }
