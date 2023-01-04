@@ -31,6 +31,7 @@ namespace BulkyBookWeb.Controllers
         public IActionResult Create(Category categoryObj)
         {
             _db.Categories.Add(categoryObj);
+            _db.SaveChanges();
             return View();
         }
     }
