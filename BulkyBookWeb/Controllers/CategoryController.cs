@@ -58,7 +58,7 @@ namespace BulkyBookWeb.Controllers
             {
                 return NotFound();
             }
-            return View();
+            return View(categoryFromDb);
         }
 
         //POST
