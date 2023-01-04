@@ -30,6 +30,7 @@ namespace BulkyBookWeb.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Create(Category categoryObj)
         {
+            _db.Categories.Add(categoryObj);
             return View();
         }
     }
