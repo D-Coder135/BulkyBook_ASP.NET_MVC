@@ -32,7 +32,7 @@ namespace BulkyBookWeb.Controllers
         {
             _db.Categories.Add(categoryObj);
             _db.SaveChanges();
-            return View();
+            return RedirectToAction("Index");
         }
     }
 }
