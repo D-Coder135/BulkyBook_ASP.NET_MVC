@@ -27,6 +27,7 @@ namespace BulkyBookWeb.Controllers
 
         //POST
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult Create(Category categoryObj)
         {
             return View();
