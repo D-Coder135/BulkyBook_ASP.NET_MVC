@@ -50,6 +50,7 @@ namespace BulkyBookWeb.Controllers
             {
                 return NotFound();
             }
+            var categoryFromDb = _db.Categories.Find(id);
             return View();
         }
 
