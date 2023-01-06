@@ -72,7 +72,7 @@ namespace BulkyBookWeb.Controllers
             }
             if (ModelState.IsValid)
             {
-                _db.Categories.Add(categoryObj);
+                _db.Categories.Update(categoryObj);
                 _db.SaveChanges();
                 return RedirectToAction("Index");
             }
