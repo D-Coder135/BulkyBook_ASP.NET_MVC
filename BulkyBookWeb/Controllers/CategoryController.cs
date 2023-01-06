@@ -100,7 +100,7 @@ namespace BulkyBookWeb.Controllers
         //POST
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult DeletePost(int? id)
+        public IActionResult DeletePOST(int? id)
         {
             var obj = _db.Categories.Find(id);
             if (obj == null)
