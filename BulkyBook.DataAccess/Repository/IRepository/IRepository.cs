@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BulkyBook.DataAccess.Repository.IRepository
 {
-    public interface IRepository
+    public interface IRepository<T> where T : class
     {
     }
 }
