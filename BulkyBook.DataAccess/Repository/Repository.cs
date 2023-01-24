@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BulkyBook.DataAccess.Repository
 {
-    public class Repository
+    public class Repository<T> : IRepository<T> where T : class
     {
     }
 }
