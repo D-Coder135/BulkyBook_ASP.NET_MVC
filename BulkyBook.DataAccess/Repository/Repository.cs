@@ -22,7 +22,7 @@ namespace BulkyBook.DataAccess.Repository
 
         public void Add(T entity)
         {
-            throw new NotImplementedException();
+
         }
 
         public IEnumerable<T> GetAll()
