@@ -47,7 +47,7 @@ namespace BulkyBook.DataAccess.Repository
 
         public void RemoveRange(IEnumerable<T> entities)
         {
-            throw new NotImplementedException();
+
         }
     }
 }
