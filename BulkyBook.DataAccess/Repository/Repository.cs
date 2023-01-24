@@ -27,7 +27,8 @@ namespace BulkyBook.DataAccess.Repository
 
         public IEnumerable<T> GetAll()
         {
-
+            IQueryable<T> query = dbSet;
+            return query.ToList();
         }
 
         public T GetFirstOrDefault(Expression<Func<T, bool>> filter)
