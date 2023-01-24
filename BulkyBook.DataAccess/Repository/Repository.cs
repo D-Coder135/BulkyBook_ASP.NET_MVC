@@ -27,7 +27,7 @@ namespace BulkyBook.DataAccess.Repository
 
         public IEnumerable<T> GetAll()
         {
-            throw new NotImplementedException();
+
         }
 
         public T GetFirstOrDefault(Expression<Func<T, bool>> filter)
