@@ -33,7 +33,7 @@ namespace BulkyBook.DataAccess.Repository
 
         public T GetFirstOrDefault(Expression<Func<T, bool>> filter)
         {
-            throw new NotImplementedException();
+
         }
 
         public void Remove(T entity)
