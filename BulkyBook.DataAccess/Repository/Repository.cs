@@ -10,6 +10,8 @@ namespace BulkyBook.DataAccess.Repository
 {
     public class Repository<T> : IRepository<T> where T : class
     {
+        private readonly ApplicationDbContext _db;
+
         public void Add(T entity)
         {
             throw new NotImplementedException();
