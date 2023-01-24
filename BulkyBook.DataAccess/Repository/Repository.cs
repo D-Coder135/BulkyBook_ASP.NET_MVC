@@ -34,7 +34,10 @@ namespace BulkyBook.DataAccess.Repository
         public T GetFirstOrDefault(Expression<Func<T, bool>> filter)
         {
             IQueryable<T> query = dbSet;
-            return query.ToList();
+
+            query.Where(filter);
+
+            return query.FirstOrDefault();
         }
 
         public void Remove(T entity)
