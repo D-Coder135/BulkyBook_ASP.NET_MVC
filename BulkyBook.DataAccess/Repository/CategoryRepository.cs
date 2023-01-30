@@ -10,5 +10,14 @@ namespace BulkyBook.DataAccess.Repository
 {
     public class CategoryRepository : Repository<Category>, ICategoryRepository
     {
+        public void Save()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update(Category category)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
