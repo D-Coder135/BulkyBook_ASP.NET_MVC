@@ -9,5 +9,11 @@ namespace BulkyBook.DataAccess.Repository
 {
     public class UnitOfWork : IUnitOfWork
     {
+        public ICategoryRepository Category => throw new NotImplementedException();
+
+        public void Save()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
