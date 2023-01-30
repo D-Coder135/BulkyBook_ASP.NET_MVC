@@ -22,9 +22,9 @@ namespace BulkyBook.DataAccess.Repository
             _db.SaveChanges();
         }
 
-        public void Update(Category category)
+        public void Update(Category obj)
         {
-            throw new NotImplementedException();
+            _db.Categories.Update(obj);
         }
     }
 }
