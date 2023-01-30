@@ -19,7 +19,7 @@ namespace BulkyBook.DataAccess.Repository
 
         public void Save()
         {
-            throw new NotImplementedException();
+            _db.SaveChanges();
         }
 
         public void Update(Category category)
