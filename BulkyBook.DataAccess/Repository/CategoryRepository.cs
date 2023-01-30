@@ -11,6 +11,12 @@ namespace BulkyBook.DataAccess.Repository
     public class CategoryRepository : Repository<Category>, ICategoryRepository
     {
         private ApplicationDbContext _db;
+
+        public CategoryRepository(ApplicationDbContext db)
+        {
+            _db = db;
+        }
+
         public void Save()
         {
             throw new NotImplementedException();
