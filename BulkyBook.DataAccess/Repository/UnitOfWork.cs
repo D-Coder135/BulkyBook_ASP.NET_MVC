@@ -18,6 +18,8 @@ namespace BulkyBook.DataAccess.Repository
         }
         public ICategoryRepository Category { get; private set; }
 
+        public ICoverTypesRepository CoverTypes { get; private set; }
+
         public void Save()
         {
             _db.SaveChanges();
