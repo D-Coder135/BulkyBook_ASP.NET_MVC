@@ -40,10 +40,12 @@ namespace BulkyBook.Models
 
         public string ImageUrl { get; set; }
 
+        [Required]
         public int CategoryId { get; set; }
 
         public Category Category { get; set; }
 
+        [Required]
         public int CoverTypeId { get; set; }
 
         public CoverType CoverType { get; set; }
