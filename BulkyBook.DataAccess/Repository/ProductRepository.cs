@@ -8,18 +8,18 @@ using System.Threading.Tasks;
 
 namespace BulkyBook.DataAccess.Repository
 {
-    public class CoverTypesRepository : Repository<CoverType>, ICoverTypesRepository
+    public class ProductRespository : Repository<Product>, IProductRepository
     {
         private ApplicationDbContext _db;
 
-        public CoverTypesRepository(ApplicationDbContext db) : base(db)
+        public ProductRespository(ApplicationDbContext db) : base(db)
         {
             _db = db;
         }
 
-        public void Update(CoverType obj)
+        public void Update(Product obj)
         {
-            _db.CoverTypes.Update(obj);
+
         }
     }
 }
