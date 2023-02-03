@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BulkyBook.Models
 {
-    internal class Product
+    public class Product
     {
     }
 }
