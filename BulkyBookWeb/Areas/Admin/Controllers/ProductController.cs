@@ -22,27 +22,6 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
         }
 
         //GET
-        public IActionResult Create()
-        {
-            return View();
-        }
-
-        //POST
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult Create(CoverType obj)
-        {
-            if (ModelState.IsValid)
-            {
-                _unitOfWork.CoverTypes.Add(obj);
-                _unitOfWork.Save();
-                TempData["success"] = "CoverType created successfully";
-                return RedirectToAction("Index");
-            }
-            return View(obj);
-        }
-
-        //GET
         public IActionResult Edit(int? id)
         {
             if (id == null || id == 0)
