@@ -29,14 +29,14 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
             {
                 // create product
 
-                return View();
+                return View(product);
             }
             else
             {
                 // update product
             }
 
-            return View();
+            return View(product);
         }
 
         //POST
