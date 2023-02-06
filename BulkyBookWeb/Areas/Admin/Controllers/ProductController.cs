@@ -24,6 +24,7 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
         //GET
         public IActionResult Upsert(int? id)
         {
+            Product product = new();
             if (id == null || id == 0)
             {
                 // create product
