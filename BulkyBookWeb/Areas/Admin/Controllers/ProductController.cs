@@ -22,19 +22,20 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
         }
 
         //GET
-        public IActionResult Edit(int? id)
+        public IActionResult Upsert(int? id)
         {
             if (id == null || id == 0)
             {
-                return NotFound();
-            }
-            var coverTypeFromDb = _unitOfWork.CoverTypes.GetFirstOrDefault(u => u.Id == id);
+                // create product
 
-            if (coverTypeFromDb == null)
-            {
-                return NotFound();
+                return View();
             }
-            return View(coverTypeFromDb);
+            else
+            {
+                // update product
+            }
+
+            return View();
         }
 
         //POST
