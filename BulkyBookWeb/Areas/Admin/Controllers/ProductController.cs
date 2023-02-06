@@ -33,6 +33,13 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
                     Value = u.Id.ToString()
                 }
                 );
+            IEnumerable<SelectListItem> CoverTypeList = _unitOfWork.CoverTypes.GetAll().Select(
+                u => new SelectListItem
+                {
+                    Text = u.Name,
+                    Value = u.Id.ToString()
+                }
+                );
             if (id == null || id == 0)
             {
                 // create product
