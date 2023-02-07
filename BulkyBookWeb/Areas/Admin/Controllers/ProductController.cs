@@ -76,11 +76,11 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
                     {
                         file.CopyTo(fileStreams);
                     }
-                    obj.Product.ImageUrl = @"\images\products" + fileName + extension;
+                    obj.Product.ImageUrl = @"\images\products" + fileName + extension
                 }
-                /*_unitOfWork.CoverTypes.Update(obj);*/
+                _unitOfWork.Product.Add(obj.Product);
                 _unitOfWork.Save();
-                TempData["success"] = "CoverType Updated Successfully";
+                TempData["success"] = "Product Created Successfully";
                 return RedirectToAction("Index");
             }
             return View(obj);
