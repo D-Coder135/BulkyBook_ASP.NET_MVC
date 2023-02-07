@@ -29,12 +29,12 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
             ProductVM productVM = new()
             {
                 Product = new(),
-                CategoryList = _unitOfWork.Category.GetAll.Select(id => new SelectListItem
+                CategoryList = _unitOfWork.Category.GetAll().Select(i => new SelectListItem
                 {
                     Text = i.Name,
                     Value = i.Id.ToString()
                 }),
-                CoverTypeList = _unitOfWork.CoverTypes.GetAll.Select(id => new SelectListItem
+                CoverTypeList = _unitOfWork.CoverTypes.GetAll().Select(i => new SelectListItem
                 {
                     Text = i.Name,
                     Value = i.Id.ToString()
@@ -44,8 +44,8 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
             if (id == null || id == 0)
             {
                 // create product
-                ViewBag.CategoryList = CategoryList;
-                ViewData["CoverTypeList"] = CoverTypeList;
+                /*ViewBag.CategoryList = CategoryList;
+                ViewData["CoverTypeList"] = CoverTypeList;*/
                 return View(product);
             }
             else
