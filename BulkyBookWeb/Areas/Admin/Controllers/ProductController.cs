@@ -21,8 +21,7 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
 
         public IActionResult Index()
         {
-            IEnumerable<CoverType> objCoverType = _unitOfWork.CoverTypes.GetAll();
-            return View(objCoverType);
+            return View();
         }
 
         //GET
