@@ -67,7 +67,7 @@
         </div>
         <div class="col-12">
             @if(Model.Product.Id != 0) {
-                <button type="submit" class="btn btn-primary" style="width:150px">Update</button>
+                <button type="submit" onclick="return ValidateInput()" class="btn btn-primary" style="width:150px">Update</button>
             } else
             {
                 <button type="submit" class="btn btn-primary" style="width:150px">Create</button>
