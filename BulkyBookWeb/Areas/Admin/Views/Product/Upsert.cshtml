@@ -48,6 +48,10 @@
             <span asp-validation-for="Product.Price100" class="text-danger"></span>
         </div>
         <div class="mb-3">
+            <label asp-for="Product.ImageUrl"></label>
+            <input type="file" class="form-control" />
+        </div>
+        <div class="mb-3">
             <label asp-for="Product.CategoryId"></label>
             <select asp-for="Product.CategoryId" asp-items="@Model.CategoryList" class="form-select">
                 <option disabled selected>--Select Category--</option>
