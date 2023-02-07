@@ -65,6 +65,7 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
+                string wwwRootPath = _hostEnvironment.WebRootPath;
                 /*_unitOfWork.CoverTypes.Update(obj);*/
                 _unitOfWork.Save();
                 TempData["success"] = "CoverType Updated Successfully";
