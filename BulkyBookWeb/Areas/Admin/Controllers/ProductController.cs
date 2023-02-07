@@ -70,6 +70,7 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
                 {
                     string fileName = Guid.NewGuid().ToString();
                     var uploads = Path.Combine(wwwRootPath, @"images/products");
+                    var extensions = Path.GetExtension(file.FileName);
                 }
                 /*_unitOfWork.CoverTypes.Update(obj);*/
                 _unitOfWork.Save();
