@@ -67,10 +67,10 @@
         </div>
         <div class="col-12">
             @if(Model.Product.Id != 0) {
-                <button type="submit" onclick="return ValidateInput()" class="btn btn-primary" style="width:150px">Update</button>
+                <button type="submit" class="btn btn-primary" style="width:150px">Update</button>
             } else
             {
-                <button type="submit" class="btn btn-primary" style="width:150px">Create</button>
+                <button type="submit" onclick="return ValidateInput()" class="btn btn-primary" style="width:150px">Create</button>
             }
         <a asp-controller="CoverType" asp-action="Index" class="btn btn-secondary" style="width:150px">
             Back to List
@@ -85,6 +85,16 @@
         <partial name="_ValidationScriptsPartial" />
     }
     <script>
-        
+        function ValidateInput() {
+            if(document.getElementById("uploadBox").value=="") {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Please upload an Image!',
+                });
+                return false;
+            }
+            return true;
+        }
     </script>
 }
