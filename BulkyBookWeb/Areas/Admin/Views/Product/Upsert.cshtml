@@ -1,6 +1,7 @@
 ﻿@model BulkyBook.Models.ViewModels.ProductVM
 
 <form method="post" asp-action="Upsert" enctype="multipart/form-data">
+    <input asp-for="Product.Id" hidden />
     <div class="border p-3 mt-4 row">
         <div class="row pb-2">
             <h2 class="text-primary">@(Model.Product.Id != 0 ? "Update" : "Create") Product</h2>
