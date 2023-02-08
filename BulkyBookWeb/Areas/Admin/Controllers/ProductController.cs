@@ -86,7 +86,14 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
                     }
                     obj.Product.ImageUrl = @"\images\products" + fileName + extension;
                 }
-                _unitOfWork.Product.Add(obj.Product);
+                if (obj.Product.Id == 0)
+                {
+                    _unitOfWork.Product.Add(obj.Product);
+                }
+                else
+                {
+                    _unitOfWork.Product.Update(obj.Product);
+                }
                 _unitOfWork.Save();
                 TempData["success"] = "Product Created Successfully";
                 return RedirectToAction("Index");
