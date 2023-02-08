@@ -4,6 +4,10 @@
     <input asp-for="Product.Id" hidden />
     <input asp-for="Product.ImageUrl" hidden />
 
+    <div class="row">
+        
+    </div>
+
     <div class="border p-3 mt-4 row">
         <div class="col-12 pb-2">
             <h2 class="text-primary">@(Model.Product.Id != 0 ? "Update" : "Create") Product</h2>
@@ -79,6 +83,7 @@
             Back to List
         </a>
         </div>
+
     </div>
 </form>
 
