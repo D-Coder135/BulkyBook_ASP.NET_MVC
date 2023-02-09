@@ -130,10 +130,10 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult DeletePOST(int? id)
         {
-            var obj = _unitOfWork.CoverTypes.GetFirstOrDefault(u => u.Id == id);
+            var obj = _unitOfWork.Product.GetFirstOrDefault(u => u.Id == id);
             if (obj == null)
             {
-                return NotFound();
+                return Json(new { success = false, message = "Error while deleting" });
             }
 
             _unitOfWork.CoverTypes.Remove(obj);
