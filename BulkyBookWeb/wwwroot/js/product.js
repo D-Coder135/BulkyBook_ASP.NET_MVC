@@ -46,7 +46,11 @@ function Delete(url) {
                 url: url,
                 type: 'DELETE',
                 success: function (data) {
-
+                    if (data.success) {
+                        toastr.success(data.message);
+                    } else {
+                        toastr.error(data.message);
+                    }
                 }
             })
         }
