@@ -136,10 +136,15 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
                 return Json(new { success = false, message = "Error while deleting" });
             }
 
-            _unitOfWork.CoverTypes.Remove(obj);
+            var oldImagePath = Path.Combine(_hostEnvironment.WebRootPath, obj.ImageUrl.TrimStart('\\'));
+            if (System.IO.File.Exists(oldImagePath))
+            {
+                System.IO.File.Delete(oldImagePath);
+            }
+
+            _unitOfWork.Product.Remove(obj);
             _unitOfWork.Save();
-            TempData["success"] = "CoverType Deleted Successfully";
-            return RedirectToAction("Index");
+            return Json(new { success = true, message = "Deleted Successfully" });
 
 
         }
