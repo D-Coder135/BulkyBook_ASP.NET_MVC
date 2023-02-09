@@ -42,11 +42,13 @@ function Delete(url) {
         confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
         if (result.isConfirmed) {
-            Swal.fire(
-                'Deleted!',
-                'Your file has been deleted.',
-                'success'
-            )
+            $.ajax({
+                url: url,
+                type: 'DELETE',
+                success: function (data) {
+
+                }
+            })
         }
     })
 }
