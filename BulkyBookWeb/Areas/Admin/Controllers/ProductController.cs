@@ -101,22 +101,6 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
             return View(obj);
         }
 
-        //GET
-        public IActionResult Delete(int? id)
-        {
-            if (id == null || id == 0)
-            {
-                return NotFound();
-            }
-            var coverTypesFromDb = _unitOfWork.CoverTypes.GetFirstOrDefault(u => u.Id == id);
-
-            if (coverTypesFromDb == null)
-            {
-                return NotFound();
-            }
-            return View(coverTypesFromDb);
-        }
-
         #region API CALLS
         [HttpGet]
         public IActionResult GetAll()
