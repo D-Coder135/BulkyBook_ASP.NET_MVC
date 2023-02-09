@@ -117,6 +117,14 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
             return View(coverTypesFromDb);
         }
 
+        #region API CALLS
+        [HttpGet]
+        public IActionResult GetAll()
+        {
+            var productList = _unitOfWork.Product.GetAll(includeProperties: "Category,CoverType");
+            return Json(new { data = productList });
+        }
+
         //POST
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
@@ -134,14 +142,6 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
             return RedirectToAction("Index");
 
 
-        }
-
-        #region API CALLS
-        [HttpGet]
-        public IActionResult GetAll()
-        {
-            var productList = _unitOfWork.Product.GetAll(includeProperties: "Category,CoverType");
-            return Json(new { data = productList });
         }
         #endregion
     }
