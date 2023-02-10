@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BulkyBook.Models.ViewModels
 {
-    internal class ShoppingCart
+    public class ShoppingCart
     {
     }
 }
