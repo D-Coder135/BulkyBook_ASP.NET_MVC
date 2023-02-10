@@ -16,7 +16,7 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
         public ProductController(IUnitOfWork unitOfWork, IWebHostEnvironment hostEnvironment)
         {
             _unitOfWork = unitOfWork;
-            _hostEnvironment = hostEnvironment; ;
+            _hostEnvironment = hostEnvironment;
         }
 
         public IActionResult Index()
@@ -84,7 +84,7 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
                     {
                         file.CopyTo(fileStreams);
                     }
-                    obj.Product.ImageUrl = @"\images\products" + fileName + extension;
+                    obj.Product.ImageUrl = @"\images\products\" + fileName + extension;
                 }
                 if (obj.Product.Id == 0)
                 {
