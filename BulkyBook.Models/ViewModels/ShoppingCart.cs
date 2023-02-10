@@ -8,5 +8,8 @@ namespace BulkyBook.Models.ViewModels
 {
     public class ShoppingCart
     {
+        public Product Product { get; set; }
+
+
     }
 }
