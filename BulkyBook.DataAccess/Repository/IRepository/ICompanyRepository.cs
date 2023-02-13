@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace BulkyBook.DataAccess.Repository.IRepository
 {
-    public interface ICoverTypesRepository : IRepository<CoverType>
+    public interface ICompanyRepository : IRepository<Company>
     {
-        void Update(CoverType category);
+        void Update(Company obj);
     }
 }
