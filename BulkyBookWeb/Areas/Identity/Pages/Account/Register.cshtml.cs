@@ -170,7 +170,7 @@ namespace BulkyBookWeb.Areas.Identity.Pages.Account
 
                     if (Input.Role == null)
                     {
-
+                        await _userManager.AddToRoleAsync(user, StaticDetails.Role_User_Indi);
                     }
 
                     var userId = await _userManager.GetUserIdAsync(user);
