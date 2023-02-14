@@ -172,6 +172,10 @@ namespace BulkyBookWeb.Areas.Identity.Pages.Account
                     {
                         await _userManager.AddToRoleAsync(user, StaticDetails.Role_User_Indi);
                     }
+                    else
+                    {
+
+                    }
 
                     var userId = await _userManager.GetUserIdAsync(user);
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
