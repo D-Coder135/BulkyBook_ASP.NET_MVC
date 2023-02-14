@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BulkyBook.Utility
 {
-    internal class EmailSender
+    public class EmailSender
     {
     }
 }
