@@ -178,6 +178,11 @@ namespace BulkyBookWeb.Areas.Identity.Pages.Account
                 user.Name = Input.Name;
                 user.PhoneNumber = Input.PhoneNumber;
 
+                if (Input.Role == StaticDetails.Role_User_Comp)
+                {
+                    user.CompanyId = Input.CompanyId;
+                }
+
                 var result = await _userManager.CreateAsync(user, Input.Password);
 
                 if (result.Succeeded)
