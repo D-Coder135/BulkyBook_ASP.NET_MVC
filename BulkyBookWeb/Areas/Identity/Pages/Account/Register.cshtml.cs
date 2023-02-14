@@ -18,6 +18,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
 
@@ -114,6 +115,7 @@ namespace BulkyBookWeb.Areas.Identity.Pages.Account
 
             public string? PostalCode { get; set; }
             public string? PhoneNumber { get; set; }
+            public IEnumerable<SelectListItem> RoleList { get; set; }
         }
 
 
