@@ -17,6 +17,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.WebUtilities;
@@ -115,6 +116,8 @@ namespace BulkyBookWeb.Areas.Identity.Pages.Account
 
             public string? PostalCode { get; set; }
             public string? PhoneNumber { get; set; }
+
+            [ValidateNever]
             public IEnumerable<SelectListItem> RoleList { get; set; }
         }
 
