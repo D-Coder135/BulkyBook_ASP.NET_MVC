@@ -112,6 +112,7 @@ namespace BulkyBookWeb.Areas.Identity.Pages.Account
             public string? State { get; set; }
 
             public string? PostalCode { get; set; }
+            public string? PhoneNumber { get; set; }
         }
 
 
