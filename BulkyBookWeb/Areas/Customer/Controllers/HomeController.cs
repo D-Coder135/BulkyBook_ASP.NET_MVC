@@ -3,6 +3,7 @@ using BulkyBook.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using System.Security.Claims;
 
 namespace BulkyBookWeb.Areas.Customer.Controllers
 {
@@ -42,6 +43,7 @@ namespace BulkyBookWeb.Areas.Customer.Controllers
         public IActionResult Details(ShoppingCart shoppingCart)
         {
             // Extracting the user id from the claims identity.
+            var claimsIdentity = (ClaimsIdentity)User.Identity;
 
             ShoppingCart cartObj = new()
             {
