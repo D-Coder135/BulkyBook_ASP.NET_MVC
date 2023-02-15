@@ -44,6 +44,7 @@ namespace BulkyBookWeb.Areas.Customer.Controllers
         {
             // Extracting the user id from the claims identity.
             var claimsIdentity = (ClaimsIdentity)User.Identity;
+            var claim = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier);
 
             ShoppingCart cartObj = new()
             {
