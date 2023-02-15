@@ -50,7 +50,7 @@ namespace BulkyBookWeb.Areas.Customer.Controllers
             _unitOfWork.ShoppingCart.Add(shoppingCart);
             _unitOfWork.Save();
 
-            return RedirectToAction("Index");
+            return RedirectToAction(nameof(Index));
         }
 
         public IActionResult Privacy()
