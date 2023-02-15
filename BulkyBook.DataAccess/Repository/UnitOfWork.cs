@@ -18,6 +18,8 @@ namespace BulkyBook.DataAccess.Repository
             CoverTypes = new CoverTypesRepository(_db);
             Product = new ProductRespository(_db);
             Company = new CompanyRepository(_db);
+            ApplicationUser = new ApplicationUserRepository(_db);
+            ShoppingCart = new ShoppingCartRepository(_db);
         }
         public ICategoryRepository Category { get; private set; }
 
