@@ -30,6 +30,7 @@ namespace BulkyBookWeb.Areas.Customer.Controllers
             ShoppingCart cartObj = new()
             {
                 Count = 1,
+                ProductId = id,
                 Product = _unitOfWork.Product.GetFirstOrDefault(u => u.Id == id, includeProperties: "Category,CoverType")
             };
             return View(cartObj);
