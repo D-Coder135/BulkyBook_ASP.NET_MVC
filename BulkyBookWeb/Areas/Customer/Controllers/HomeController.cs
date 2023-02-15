@@ -51,8 +51,12 @@ namespace BulkyBookWeb.Areas.Customer.Controllers
 
             if (cartFromDb == null)
             {
-
                 _unitOfWork.ShoppingCart.Add(shoppingCart);
+            }
+
+            else
+            {
+
             }
             _unitOfWork.Save();
 
