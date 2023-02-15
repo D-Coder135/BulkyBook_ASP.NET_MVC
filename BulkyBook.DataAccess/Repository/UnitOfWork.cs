@@ -26,6 +26,10 @@ namespace BulkyBook.DataAccess.Repository
         public IProductRepository Product { get; private set; }
         public ICompanyRepository Company { get; private set; }
 
+        public IShoppingCartRepository ShoppingCart { get; private set; }
+
+        public IApplicationUserRepository ApplicationUser { get; private set; }
+
         public void Save()
         {
             _db.SaveChanges();
