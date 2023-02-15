@@ -41,6 +41,8 @@ namespace BulkyBookWeb.Areas.Customer.Controllers
         [Authorize]
         public IActionResult Details(ShoppingCart shoppingCart)
         {
+            // Extracting the user id from the claims identity.
+
             ShoppingCart cartObj = new()
             {
                 Count = 1,
