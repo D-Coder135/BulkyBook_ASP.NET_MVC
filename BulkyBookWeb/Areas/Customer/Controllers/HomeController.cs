@@ -39,7 +39,7 @@ namespace BulkyBookWeb.Areas.Customer.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize]
-        public IActionResult Details(int id)
+        public IActionResult Details(ShoppingCart shoppingCart)
         {
             ShoppingCart cartObj = new()
             {
