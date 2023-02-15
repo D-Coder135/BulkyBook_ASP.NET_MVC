@@ -25,7 +25,8 @@ namespace BulkyBook.DataAccess.Repository
 
         public int IncrementCount(ShoppingCart shoppingCart, int count)
         {
-            throw new NotImplementedException();
+            shoppingCart.Count += count;
+            return shoppingCart.Count;
         }
     }
 }
