@@ -24,5 +24,7 @@ namespace BulkyBook.Models
         public int Count { get; set; }
 
         public string ApplicationUserId { get; set; }
+
+        public ApplicationUser ApplicationUser { get; set; }
     }
 }
