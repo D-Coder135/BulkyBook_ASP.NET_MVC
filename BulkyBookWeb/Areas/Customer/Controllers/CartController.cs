@@ -23,6 +23,11 @@ namespace BulkyBookWeb.Areas.Customer.Controllers
             var claimsIdentity = (ClaimsIdentity)User.Identity;
             var claim = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier);
 
+            ShoppingCartVM = new ShoppingCartVM()
+            {
+
+            };
+
             return View();
         }
     }
