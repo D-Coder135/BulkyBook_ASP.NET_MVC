@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using BulkyBook.DataAccess.Repository.IRepository;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BulkyBookWeb.Areas.Customer.Controllers
@@ -7,6 +8,7 @@ namespace BulkyBookWeb.Areas.Customer.Controllers
     [Authorize]
     public class CartController : Controller
     {
+        private readonly IUnitOfWork _unitOfWork;
         public IActionResult Index()
         {
             return View();
