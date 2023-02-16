@@ -28,6 +28,11 @@ namespace BulkyBookWeb.Areas.Customer.Controllers
 				ListCart = _unitOfWork.ShoppingCart.GetAll(u => u.ApplicationUserId == claim.Value, includeProperties: "Product")
 			};
 
+			foreach (var cart in ShoppingCartVM.ListCart)
+			{
+
+			}
+
 			return View(ShoppingCartVM);
 		}
 
@@ -43,7 +48,7 @@ namespace BulkyBookWeb.Areas.Customer.Controllers
 				{
 					return price50;
 				}
-				return price100
+				return price100;
 			}
 		}
 	}
