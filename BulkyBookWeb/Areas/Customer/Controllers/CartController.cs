@@ -28,7 +28,7 @@ namespace BulkyBookWeb.Areas.Customer.Controllers
                 ListCart = _unitOfWork.ShoppingCart.GetAll(u => u.ApplicationUserId == claim.Value, includeProperties: "Product")
             };
 
-            return View();
+            return View(ShoppingCartVM);
         }
     }
 }
