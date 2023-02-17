@@ -38,6 +38,12 @@ namespace BulkyBookWeb.Areas.Customer.Controllers
 			return View(ShoppingCartVM);
 		}
 
+		public IActionResult Plus(int cartId)
+		{
+
+		}
+
+
 		private double GetPriceBasedOnQuantity(double quantity, double price, double price50, double price100)
 		{
 			if (quantity <= 50)
