@@ -42,6 +42,7 @@ namespace BulkyBookWeb.Areas.Customer.Controllers
 		{
 			var cart = _unitOfWork.ShoppingCart.GetFirstOrDefault(u => u.Id == cartId);
 			_unitOfWork.ShoppingCart.IncrementCount(cart, 1);
+			return RedirectToAction(nameof(Index));
 		}
 
 
