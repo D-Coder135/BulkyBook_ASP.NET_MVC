@@ -38,9 +38,9 @@ namespace BulkyBookWeb.Areas.Customer.Controllers
 			return View(ShoppingCartVM);
 		}
 
-		public IActionResult Index()
+		public IActionResult Summary()
 		{
-			var claimsIdentity = (ClaimsIdentity)User.Identity;
+			/*var claimsIdentity = (ClaimsIdentity)User.Identity;
 			var claim = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier);
 
 			ShoppingCartVM = new ShoppingCartVM()
@@ -54,8 +54,8 @@ namespace BulkyBookWeb.Areas.Customer.Controllers
 
 				ShoppingCartVM.CartTotal += (cart.Price * cart.Count);
 			}
-
-			return View(ShoppingCartVM);
+*/
+			return View();
 		}
 
 		public IActionResult Plus(int cartId)
