@@ -6,22 +6,24 @@ using System.Threading.Tasks;
 
 namespace BulkyBook.DataAccess.Repository.IRepository
 {
-    public interface IUnitOfWork
-    {
-        ICategoryRepository Category { get; }
+	public interface IUnitOfWork
+	{
+		ICategoryRepository Category { get; }
 
-        ICoverTypesRepository CoverTypes { get; }
+		ICoverTypesRepository CoverTypes { get; }
 
-        IProductRepository Product { get; }
+		IProductRepository Product { get; }
 
-        ICompanyRepository Company { get; }
+		ICompanyRepository Company { get; }
 
-        IShoppingCartRepository ShoppingCart { get; }
+		IShoppingCartRepository ShoppingCart { get; }
 
-        IApplicationUserRepository ApplicationUser { get; }
+		IApplicationUserRepository ApplicationUser { get; }
+		IOrderDetailRepository OrderDetailRepository { get; }
+		IOrderHeaderRepository OrderHeaderRepository { get; }
 
 
 
-        void Save();
-    }
+		void Save();
+	}
 }
