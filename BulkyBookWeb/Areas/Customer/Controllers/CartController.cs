@@ -110,7 +110,7 @@ namespace BulkyBookWeb.Areas.Customer.Controllers
 			}
 			_unitOfWork.ShoppingCart.RemoveRange(ShoppingCartVM.ListCart);
 			_unitOfWork.Save();
-			return View(ShoppingCartVM);
+			return RedirectToAction("Index", "Home");
 		}
 
 		public IActionResult Plus(int cartId)
