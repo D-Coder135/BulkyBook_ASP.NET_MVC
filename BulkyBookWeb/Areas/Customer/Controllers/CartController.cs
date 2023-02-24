@@ -105,6 +105,8 @@ namespace BulkyBookWeb.Areas.Customer.Controllers
 					Price = cart.Price,
 					Count = cart.Count
 				};
+				_unitOfWork.OrderDetail.Add(orderDetail);
+				_unitOfWork.Save();
 			}
 			return View(ShoppingCartVM);
 		}
