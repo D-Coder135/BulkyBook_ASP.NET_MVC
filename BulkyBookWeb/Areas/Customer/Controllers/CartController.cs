@@ -108,6 +108,8 @@ namespace BulkyBookWeb.Areas.Customer.Controllers
 				_unitOfWork.OrderDetail.Add(orderDetail);
 				_unitOfWork.Save();
 			}
+			_unitOfWork.ShoppingCart.RemoveRange(ShoppingCartVM.ListCart);
+			_unitOfWork.Save();
 			return View(ShoppingCartVM);
 		}
 
