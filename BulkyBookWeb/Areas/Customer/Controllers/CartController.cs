@@ -1,5 +1,6 @@
 ﻿using BulkyBook.DataAccess.Repository.IRepository;
 using BulkyBook.Models.ViewModels;
+using BulkyBook.Utility;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
@@ -78,6 +79,11 @@ namespace BulkyBookWeb.Areas.Customer.Controllers
 			var claim = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier);
 
 			ShoppingCartVM.ListCart = _unitOfWork.ShoppingCart.GetAll(u => u.ApplicationUserId == claim.Value, includeProperties: "Product");
+
+			ShoppingCartVM.OrderHeader.PaymentStatus = StaticDetails.PaymentStatusPending;
+			ShoppingCartVM.OrderHeader.OrderStatus = StaticDetails.StatusPending;
+			ShoppingCartVM.OrderHeader.OrderDate = System.DateTime.Now;
+			ShoppingCartVM.OrderHeader.ApplicationUserId = claim.Value;
 
 
 			foreach (var cart in ShoppingCartVM.ListCart)
