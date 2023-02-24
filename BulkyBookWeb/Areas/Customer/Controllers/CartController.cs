@@ -92,6 +92,9 @@ namespace BulkyBookWeb.Areas.Customer.Controllers
 
 				ShoppingCartVM.OrderHeader.OrderTotal += (cart.Price * cart.Count);
 			}
+
+			_unitOfWork.OrderHeader.Add(ShoppingCartVM.OrderHeader);
+			_unitOfWork.Save();
 			return View(ShoppingCartVM);
 		}
 
