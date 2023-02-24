@@ -69,6 +69,9 @@ namespace BulkyBookWeb.Areas.Customer.Controllers
 			return View(ShoppingCartVM);
 		}
 
+		[HttpPost]
+		[ActionName("Summary")]
+		[ValidateAntiForgeryToken]
 		public IActionResult SummaryPOST()
 		{
 			var claimsIdentity = (ClaimsIdentity)User.Identity;
