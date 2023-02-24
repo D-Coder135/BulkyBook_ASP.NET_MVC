@@ -74,7 +74,7 @@ namespace BulkyBookWeb.Areas.Customer.Controllers
 		[HttpPost]
 		[ActionName("Summary")]
 		[ValidateAntiForgeryToken]
-		public IActionResult SummaryPOST()
+		public IActionResult SummaryPOST(ShoppingCartVM ShoppingCartVM)
 		{
 			var claimsIdentity = (ClaimsIdentity)User.Identity;
 			var claim = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier);
