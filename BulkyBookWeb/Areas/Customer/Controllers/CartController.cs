@@ -110,6 +110,7 @@ namespace BulkyBookWeb.Areas.Customer.Controllers
 				_unitOfWork.Save();
 			}
 
+			// stripe configuration
 			var options = new SessionCreateOptions
 			{
 				LineItems = new List<SessionLineItemOptions>
