@@ -113,7 +113,13 @@ namespace BulkyBookWeb.Areas.Customer.Controllers
 			// stripe configuration
 			var domain = "https://localhost:44324/";
 			var options = new SessionCreateOptions
+
 			{
+				PaymentMethodTypes = new List<string>
+				{
+					"card",
+				},
+
 				LineItems = new List<SessionLineItemOptions>
 		{
 		  new SessionLineItemOptions
