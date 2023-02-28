@@ -161,6 +161,11 @@ namespace BulkyBookWeb.Areas.Customer.Controllers
 			return RedirectToAction("Index", "Home");*/
 		}
 
+		public IActionResult OrderConfimation(int id)
+		{
+
+		}
+
 		public IActionResult Plus(int cartId)
 		{
 			var cart = _unitOfWork.ShoppingCart.GetFirstOrDefault(u => u.Id == cartId);
