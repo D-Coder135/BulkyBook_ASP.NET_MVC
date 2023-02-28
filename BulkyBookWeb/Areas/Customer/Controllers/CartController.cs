@@ -142,6 +142,7 @@ namespace BulkyBookWeb.Areas.Customer.Controllers
 					},
 					Quantity = item.Count,
 				};
+				options.LineItems.Add(sessionLineItem);
 			}
 
 			var service = new SessionService();
