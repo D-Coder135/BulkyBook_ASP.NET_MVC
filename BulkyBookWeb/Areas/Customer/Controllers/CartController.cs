@@ -147,6 +147,7 @@ namespace BulkyBookWeb.Areas.Customer.Controllers
 
 			var service = new SessionService();
 			Session session = service.Create(options);
+
 			/*ShoppingCartVM.OrderHeader.SessionId = session.Id;
 			ShoppingCartVM.OrderHeader.PaymentIntendId = session.PaymentIntentId;*/
 
