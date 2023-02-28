@@ -151,9 +151,9 @@ namespace BulkyBookWeb.Areas.Customer.Controllers
 			Response.Headers.Add("Location", session.Url);
 			return new StatusCodeResult(303);
 
-			_unitOfWork.ShoppingCart.RemoveRange(ShoppingCartVM.ListCart);
+			/*_unitOfWork.ShoppingCart.RemoveRange(ShoppingCartVM.ListCart);
 			_unitOfWork.Save();
-			return RedirectToAction("Index", "Home");
+			return RedirectToAction("Index", "Home");*/
 		}
 
 		public IActionResult Plus(int cartId)
