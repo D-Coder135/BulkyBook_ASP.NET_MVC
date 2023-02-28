@@ -161,7 +161,7 @@ namespace BulkyBookWeb.Areas.Customer.Controllers
 			return RedirectToAction("Index", "Home");*/
 		}
 
-		public IActionResult OrderConfimation(int id)
+		public IActionResult OrderConfirmation(int id)
 		{
 			OrderHeader orderHeader = _unitOfWork.OrderHeader.GetFirstOrDefault(u => u.Id == id);
 			var service = new SessionService();
