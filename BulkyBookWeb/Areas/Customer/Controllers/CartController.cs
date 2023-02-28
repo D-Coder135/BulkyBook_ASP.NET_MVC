@@ -82,8 +82,6 @@ namespace BulkyBookWeb.Areas.Customer.Controllers
 
 			ShoppingCartVM.ListCart = _unitOfWork.ShoppingCart.GetAll(u => u.ApplicationUserId == claim.Value, includeProperties: "Product");
 
-			ShoppingCartVM.OrderHeader.PaymentStatus = StaticDetails.PaymentStatusPending;
-			ShoppingCartVM.OrderHeader.OrderStatus = StaticDetails.StatusPending;
 			ShoppingCartVM.OrderHeader.OrderDate = System.DateTime.Now;
 			ShoppingCartVM.OrderHeader.ApplicationUserId = claim.Value;
 
@@ -96,6 +94,11 @@ namespace BulkyBookWeb.Areas.Customer.Controllers
 			}
 
 			ApplicationUser applicationUser = _unitOfWork.ApplicationUser.GetFirstOrDefault(u => u.Id == claim.Value);
+			if (applicationUser.CompanyId.GetValueOrDefault() == 0)
+			{
+				ShoppingCartVM.OrderHeader.PaymentStatus = StaticDetails.PaymentStatusPending;
+				ShoppingCartVM.OrderHeader.OrderStatus = StaticDetails.StatusPending;
+			}
 
 			_unitOfWork.OrderHeader.Add(ShoppingCartVM.OrderHeader);
 			_unitOfWork.Save();
