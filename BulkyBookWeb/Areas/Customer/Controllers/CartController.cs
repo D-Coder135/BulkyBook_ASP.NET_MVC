@@ -151,6 +151,7 @@ namespace BulkyBookWeb.Areas.Customer.Controllers
 			/*ShoppingCartVM.OrderHeader.SessionId = session.Id;
 			ShoppingCartVM.OrderHeader.PaymentIntendId = session.PaymentIntentId;*/
 			_unitOfWork.OrderHeader.UpdateStripePaymentId(ShoppingCartVM.OrderHeader.Id, session.Id, session.PaymentIntentId);
+			_unitOfWork.Save();
 
 			Response.Headers.Add("Location", session.Url);
 			return new StatusCodeResult(303);
