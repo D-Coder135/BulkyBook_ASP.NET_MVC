@@ -121,21 +121,8 @@ namespace BulkyBookWeb.Areas.Customer.Controllers
 				},
 
 				LineItems = new List<SessionLineItemOptions>
-		{
-		  new SessionLineItemOptions
-		  {
-			PriceData = new SessionLineItemPriceDataOptions
-			{
-			  UnitAmount = 2000,
-			  Currency = "usd",
-			  ProductData = new SessionLineItemPriceDataProductDataOptions
-			  {
-				Name = "T-shirt",
-			  },
-			},
-			Quantity = 1,
-		  },
-		},
+
+
 				Mode = "payment",
 				SuccessUrl = "http://localhost:4242/success",
 				CancelUrl = "http://localhost:4242/cancel",
