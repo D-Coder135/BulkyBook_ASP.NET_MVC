@@ -122,8 +122,8 @@ namespace BulkyBookWeb.Areas.Customer.Controllers
 
 				LineItems = new List<SessionLineItemOptions>(),
 				Mode = "payment",
-				SuccessUrl = "http://localhost:4242/success",
-				CancelUrl = "http://localhost:4242/cancel",
+				SuccessUrl = domain + $"customer/cart/OrderConfirmation?id={ShoppingCartVM.OrderHeader.Id}",
+				CancelUrl = domain + $"customer/cart/index",
 			};
 
 			foreach (var item in ShoppingCartVM.ListCart)
