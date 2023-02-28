@@ -120,13 +120,29 @@ namespace BulkyBookWeb.Areas.Customer.Controllers
 					"card",
 				},
 
-				LineItems = new List<SessionLineItemOptions>
-
-
+				LineItems = new List<SessionLineItemOptions>(),
 				Mode = "payment",
 				SuccessUrl = "http://localhost:4242/success",
 				CancelUrl = "http://localhost:4242/cancel",
 			};
+
+			foreach (var item in ShoppingCartVM.ListCart)
+			{
+
+				var sessionLineItem = new SessionLineItemOptions
+				{
+					PriceData = new SessionLineItemPriceDataOptions
+					{
+						UnitAmount = (long)(item.Price * 100),
+						Currency = "usd",
+						ProductData = new SessionLineItemPriceDataProductDataOptions
+						{
+							Name = item.Product.Title,
+						},
+					},
+					Quantity = item.Count,
+				};
+			}
 
 			var service = new SessionService();
 			Session session = service.Create(options);
