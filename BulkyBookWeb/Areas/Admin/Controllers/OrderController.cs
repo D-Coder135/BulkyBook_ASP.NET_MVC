@@ -1,4 +1,5 @@
 ﻿using BulkyBook.DataAccess.Repository.IRepository;
+using BulkyBook.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BulkyBookWeb.Areas.Admin.Controllers
@@ -21,6 +22,8 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
 		[HttpGet]
 		public IActionResult GetAll()
 		{
+			IEnumerable<OrderHeader> orderHeaders;
+
 			var productList = _unitOfWork.Product.GetAll(includeProperties: "Category,CoverType");
 			return Json(new { data = productList });
 		}
