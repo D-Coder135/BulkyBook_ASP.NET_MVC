@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace BulkyBook.Models.ViewModels
 {
-	pulbic class OrderVM
+	public class OrderVM
 	{
+		public OrderHeader OrderHeader { get; set; }
+		public IEnumerable<OrderDetail> OrderDetail { get; set; }
 	}
 }
