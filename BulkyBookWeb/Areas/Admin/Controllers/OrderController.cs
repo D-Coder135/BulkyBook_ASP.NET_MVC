@@ -24,8 +24,8 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
 		{
 			IEnumerable<OrderHeader> orderHeaders;
 
-			var productList = _unitOfWork.Product.GetAll(includeProperties: "Category,CoverType");
-			return Json(new { data = productList });
+			orderHeaders = _unitOfWork.OrderHeader.GetAll(includeProperties: "ApplicationUser");
+			return Json(new { data = orderHeaders });
 		}
 		#endregion
 	}
