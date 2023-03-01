@@ -7,14 +7,15 @@ $(document).ready(function () {
 function loadDataTable() {
     dataTable = $('#tblData').DataTable({
         "ajax": {
-            "url": "/Admin/Product/GetAll"
+            "url": "/Admin/Order/GetAll"
         },
         "columns": [
-            { "data": "title", "width": "15%" },
-            { "data": "isbn", "width": "15%" },
-            { "data": "price", "width": "15%" },
-            { "data": "author", "width": "15%" },
-            { "data": "category.name", "width": "15%" },
+            { "data": "id", "width": "15%" },
+            { "data": "name", "width": "15%" },
+            { "data": "phoneNumber", "width": "15%" },
+            { "data": "applicationUser.email", "width": "15%" },
+            { "data": "orderStatus", "width": "15%" },
+            { "data": "orderTotal", "width": "15%" },
             {
                 "data": "id",
                 "render": function (data) {
