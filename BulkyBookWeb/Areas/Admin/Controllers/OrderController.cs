@@ -39,6 +39,9 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
                 case "completed":
                     orderHeaders = orderHeaders.Where(u => u.OrderStatus == StaticDetails.StatusShipped);
                     break;
+                case "approved":
+                    orderHeaders = orderHeaders.Where(u => u.OrderStatus == StaticDetails.StatusApproved);
+                    break;
                 default:
                     break;
             }
