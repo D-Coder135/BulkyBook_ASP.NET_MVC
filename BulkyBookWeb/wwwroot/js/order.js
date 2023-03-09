@@ -14,11 +14,15 @@ $(document).ready(function () {
                 loadDataTable("pending");
             }
             else {
-                loadDataTable("all");
+                if (url.includes("approved")) {
+                    loadDataTable("approved");
+                }
+                else {
+                    loadDataTable("all");
+                }
             }
         }
-    }
-});
+    });
 
 function loadDataTable(status) {
     dataTable = $('#tblData').DataTable({
