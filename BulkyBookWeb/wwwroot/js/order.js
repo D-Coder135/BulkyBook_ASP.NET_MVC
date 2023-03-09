@@ -18,7 +18,6 @@ $(document).ready(function () {
             }
         }
     }
-    loadDataTable();
 });
 
 function loadDataTable(status) {
