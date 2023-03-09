@@ -7,7 +7,16 @@
             <ul class="list-group-horizontal-sm">
                 <a style="text-decoration:none;" asp-controller="Order" asp-action="Index" asp-route-status="inprocess">
                     <li class="list-group-item">In Process</li>
-                </a>  
+                </a>
+                <a style="text-decoration:none;" asp-controller="Order" asp-action="Index" asp-route-status="pending">
+                <li class="list-group-item">Pending</li>
+                </a>
+                <a style="text-decoration:none;" asp-controller="Order" asp-action="Index" asp-route-status="completed">
+                <li class="list-group-item">Completed</li>
+                </a>
+                <a style="text-decoration:none;" asp-controller="Order" asp-action="Index" asp-route-status="all">
+                <li class="list-group-item">All</li>
+                </a>
             </ul>
         </div>
     </div>
