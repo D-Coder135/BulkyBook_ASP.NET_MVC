@@ -4,30 +4,30 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BulkyBookWeb.Areas.Admin.Controllers
 {
-	[Area("Admin")]
-	public class OrderController : Controller
-	{
-		private readonly IUnitOfWork _unitOfWork;
+    [Area("Admin")]
+    public class OrderController : Controller
+    {
+        private readonly IUnitOfWork _unitOfWork;
 
-		public OrderController(IUnitOfWork unitOfWork)
-		{
-			_unitOfWork = unitOfWork;
-		}
+        public OrderController(IUnitOfWork unitOfWork)
+        {
+            _unitOfWork = unitOfWork;
+        }
 
-		public IActionResult Index()
-		{
-			return View();
-		}
+        public IActionResult Index()
+        {
+            return View();
+        }
 
-		#region API CALLS
-		[HttpGet]
-		public IActionResult GetAll()
-		{
-			IEnumerable<OrderHeader> orderHeaders;
+        #region API CALLS
+        [HttpGet]
+        public IActionResult GetAll(string status)
+        {
+            IEnumerable<OrderHeader> orderHeaders;
 
-			orderHeaders = _unitOfWork.OrderHeader.GetAll(includeProperties: "ApplicationUser");
-			return Json(new { data = orderHeaders });
-		}
-		#endregion
-	}
+            orderHeaders = _unitOfWork.OrderHeader.GetAll(includeProperties: "ApplicationUser");
+            return Json(new { data = orderHeaders });
+        }
+        #endregion
+    }
 }
