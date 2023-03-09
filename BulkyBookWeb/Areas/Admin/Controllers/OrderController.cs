@@ -1,5 +1,6 @@
 ﻿using BulkyBook.DataAccess.Repository.IRepository;
 using BulkyBook.Models;
+using BulkyBook.Utility;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BulkyBookWeb.Areas.Admin.Controllers
@@ -26,6 +27,22 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
             IEnumerable<OrderHeader> orderHeaders;
 
             orderHeaders = _unitOfWork.OrderHeader.GetAll(includeProperties: "ApplicationUser");
+
+            switch (status)
+            {
+                case "pending":
+                    orderHeaders = orderHeaders.Where(u => u.PaymentStatus == StaticDetails.PaymentStatusDelayedPayment);
+                    break;
+                case "inprocess":
+                    orderHeaders = orderHeaders.Where(u => u.OrderStatus == StaticDetails.StatusInProcess);
+                    break;
+                case "completed":
+                    orderHeaders = orderHeaders.Where(u => u.OrderStatus == StaticDetails.StatusShipped);
+                    break;
+                default:
+                    break;
+            }
+
             return Json(new { data = orderHeaders });
         }
         #endregion
