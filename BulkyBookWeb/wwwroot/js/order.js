@@ -21,10 +21,10 @@ $(document).ready(function () {
     loadDataTable();
 });
 
-function loadDataTable() {
+function loadDataTable(status) {
     dataTable = $('#tblData').DataTable({
         "ajax": {
-            "url": "/Admin/Order/GetAll"
+            "url": "/Admin/Order/GetAll?status=" + status
         },
         "columns": [
             { "data": "id", "width": "5%" },
