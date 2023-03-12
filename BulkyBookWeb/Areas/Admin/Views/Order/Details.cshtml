@@ -24,8 +24,13 @@
 							<div class="row my-1">
 								<div class="col-3">Name</div>
 								<div class="col-9">
-									
-									<input type="text" class="form-control" />
+									@if (User.IsInRole(StaticDetails.Role_Admin) || User.IsInRole(StaticDetails.Role_Employee))
+									{
+										
+									} else
+									{
+										<input type="text" class="form-control" />
+									}
 								</div>
 							</div>
 							<div class="row my-1">
