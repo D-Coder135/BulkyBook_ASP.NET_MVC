@@ -23,6 +23,11 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
             return View();
         }
 
+        public IActionResult Details(int orderId)
+        {
+            return View();
+        }
+
         #region API CALLS
         [HttpGet]
         public IActionResult GetAll(string status)
