@@ -28,6 +28,7 @@
 									@if (User.IsInRole(StaticDetails.Role_Admin) || User.IsInRole(StaticDetails.Role_Employee))
 									{
 										<input asp-for="OrderHeader.Name" type="text" class="form-control" />
+										<span asp-validation-for="OrderHeader.Name" class="text-danger"></span>
 										
 									} else
 									{
