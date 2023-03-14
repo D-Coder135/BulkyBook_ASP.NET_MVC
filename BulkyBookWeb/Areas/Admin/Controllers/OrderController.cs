@@ -55,6 +55,7 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
                 orderHeaderFromDb.TrackingNumber = OrderVM.OrderHeader.TrackingNumber;
             }
             _unitOfWork.OrderHeader.Update(orderHeaderFromDb);
+            _unitOfWork.Save();
             return View(OrderVM);
         }
 
