@@ -35,6 +35,8 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
             return View(OrderVM);
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult UpdateOrderDetails(int orderId)
         {
             OrderVM = new OrderVM()
