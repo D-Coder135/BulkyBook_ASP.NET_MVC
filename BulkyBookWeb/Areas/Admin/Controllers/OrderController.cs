@@ -57,7 +57,7 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
             _unitOfWork.OrderHeader.Update(orderHeaderFromDb);
             _unitOfWork.Save();
             TempData["success"] = "Order Details Updated Successfully.";
-            return View(OrderVM);
+            return RedirectToAction("Details", "Order", new { orderId = orderHeaderFromDb.Id });
         }
 
         #region API CALLS
