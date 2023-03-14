@@ -37,13 +37,8 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult UpdateOrderDetails(int orderId)
+        public IActionResult UpdateOrderDetails()
         {
-            OrderVM = new OrderVM()
-            {
-                OrderHeader = _unitOfWork.OrderHeader.GetFirstOrDefault(u => u.Id == orderId, includeProperties: "ApplicationUser"),
-                OrderDetail = _unitOfWork.OrderDetail.GetAll(u => u.OrderId == orderId, includeProperties: "Product"),
-            };
             return View(OrderVM);
         }
 
