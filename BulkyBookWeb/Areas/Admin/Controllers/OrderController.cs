@@ -46,6 +46,14 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
             orderHeaderFromDb.City = OrderVM.OrderHeader.City;
             orderHeaderFromDb.State = OrderVM.OrderHeader.State;
             orderHeaderFromDb.PostalCode = OrderVM.OrderHeader.PostalCode;
+            if (OrderVM.OrderHeader.Carrier != null)
+            {
+                orderHeaderFromDb.Carrier = OrderVM.OrderHeader.Carrier;
+            }
+            if (OrderVM.OrderHeader.TrackingNumber != null)
+            {
+                orderHeaderFromDb.TrackingNumber = OrderVM.OrderHeader.TrackingNumber;
+            }
             return View(OrderVM);
         }
 
