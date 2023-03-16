@@ -239,11 +239,11 @@
                             {
                                 if (Model.OrderHeader.OrderStatus == StaticDetails.StatusApproved)
                                 {
-                                    <input type="submit" class="btn btn-primary form-control my-1" value="Start Processing" />
+                                    <input type="submit" asp-action="StartProcessing" class="btn btn-primary form-control my-1" value="Start Processing" />
                                 }
                                 if (Model.OrderHeader.OrderStatus == StaticDetails.StatusInProcess)
                                 {
-                                    <input type="submit" class="btn btn-primary form-control my-1" value="Ship Order" />
+                                    <input type="submit" asp-action="ShipOrder" class="btn btn-primary form-control my-1" value="Ship Order" />
                                 }
                                 @if (Model.OrderHeader.PaymentStatus == StaticDetails.PaymentStatusDelayedPayment && Model.OrderHeader.OrderStatus == StaticDetails.StatusShipped)
                                 {
