@@ -56,7 +56,7 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
             }
             _unitOfWork.OrderHeader.Update(orderHeaderFromDb);
             _unitOfWork.Save();
-            TempData["success"] = "Order Details Updated Successfully.";
+            TempData["Success"] = "Order Details Updated Successfully.";
             return RedirectToAction("Details", "Order", new { orderId = orderHeaderFromDb.Id });
         }
 
@@ -64,7 +64,6 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult StartProcessing()
         {
-
             _unitOfWork.OrderHeader.UpdateStatus(OrderVM.OrderHeader.Id, StaticDetails.StatusInProcess);
             _unitOfWork.Save();
             TempData["Success"] = "Order Status Updated Successfully.";
