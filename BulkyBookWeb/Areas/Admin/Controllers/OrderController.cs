@@ -60,6 +60,8 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
             return RedirectToAction("Details", "Order", new { orderId = orderHeaderFromDb.Id });
         }
 
+
+
         #region API CALLS
         [HttpGet]
         public IActionResult GetAll(string status)
