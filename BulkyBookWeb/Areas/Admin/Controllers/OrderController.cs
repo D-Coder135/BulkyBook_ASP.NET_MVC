@@ -64,25 +64,11 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult StartProcessing()
         {
-            var orderHeaderFromDb = _unitOfWork.OrderHeader.GetFirstOrDefault(u => u.Id == OrderVM.OrderHeader.Id, tracked: false);
-            orderHeaderFromDb.Name = OrderVM.OrderHeader.Name;
-            orderHeaderFromDb.PhoneNumber = OrderVM.OrderHeader.PhoneNumber;
-            orderHeaderFromDb.StreetAddress = OrderVM.OrderHeader.StreetAddress;
-            orderHeaderFromDb.City = OrderVM.OrderHeader.City;
-            orderHeaderFromDb.State = OrderVM.OrderHeader.State;
-            orderHeaderFromDb.PostalCode = OrderVM.OrderHeader.PostalCode;
-            if (OrderVM.OrderHeader.Carrier != null)
-            {
-                orderHeaderFromDb.Carrier = OrderVM.OrderHeader.Carrier;
-            }
-            if (OrderVM.OrderHeader.TrackingNumber != null)
-            {
-                orderHeaderFromDb.TrackingNumber = OrderVM.OrderHeader.TrackingNumber;
-            }
-            _unitOfWork.OrderHeader.Update(orderHeaderFromDb);
+
+            _unitOfWork.OrderHeader.UpdateStatus(OrderVM.OrderHeader.Id, StaticDetails.StatusInProcess);
             _unitOfWork.Save();
-            TempData["success"] = "Order Details Updated Successfully.";
-            return RedirectToAction("Details", "Order", new { orderId = orderHeaderFromDb.Id });
+            TempData["Success"] = "Order Status Updated Successfully.";
+            return RedirectToAction("Details", "Order", new { orderId = OrderVM.OrderHeader.Id });
         }
 
         #region API CALLS
