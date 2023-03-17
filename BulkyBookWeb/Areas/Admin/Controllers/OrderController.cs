@@ -39,7 +39,7 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
         }
 
         [ActionName("Details")]
-        public IActionResult Details(int orderId)
+        public IActionResult Details_PAY_NOW(int orderId)
         {
             OrderVM = new OrderVM()
             {
