@@ -95,7 +95,7 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
         [HttpPost]
         [Authorize(Roles = StaticDetails.Role_Admin + "," + StaticDetails.Role_Employee)]
         [ValidateAntiForgeryToken]
-        public IActionResult ShipOrder()
+        public IActionResult CancelOrder()
         {
             var orderHeader = _unitOfWork.OrderHeader.GetFirstOrDefault(u => u.Id == OrderVM.OrderHeader.Id, tracked: false);
 
