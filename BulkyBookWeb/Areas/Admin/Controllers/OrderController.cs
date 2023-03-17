@@ -85,8 +85,7 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
             var service = new SessionService();
             Session session = service.Create(options);
 
-            /*ShoppingCartVM.OrderHeader.SessionId = session.Id;
-            ShoppingCartVM.OrderHeader.PaymentIntendId = session.PaymentIntentId;*/
+
             _unitOfWork.OrderHeader.UpdateStripePaymentId(OrderVM.OrderHeader.Id, session.Id, session.PaymentIntentId);
             _unitOfWork.Save();
 
