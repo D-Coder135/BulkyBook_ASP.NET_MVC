@@ -93,24 +93,20 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
             return new StatusCodeResult(303);
         }
 
-        public IActionResult PaymentConfirmation(int id)
+        public IActionResult PaymentConfirmation(int orderHeaderId)
         {
-            OrderHeader orderHeader = _unitOfWork.OrderHeader.GetFirstOrDefault(u => u.Id == id);
-            if (orderHeader.PaymentStatus != StaticDetails.PaymentStatusDelayedPayment)
+            OrderHeader orderHeader = _unitOfWork.OrderHeader.GetFirstOrDefault(u => u.Id == orderHeaderId);
+            if (orderHeader.PaymentStatus == StaticDetails.PaymentStatusDelayedPayment)
             {
                 var service = new SessionService();
                 Session session = service.Get(orderHeader.SessionId);
                 if (session.PaymentStatus.ToLower() == "paid")
                 {
-                    _unitOfWork.OrderHeader.UpdateStatus(id, StaticDetails.StatusApproved, StaticDetails.PaymentStatusApproved);
+                    _unitOfWork.OrderHeader.UpdateStatus(orderHeaderId, orderHeader.OrderStatus, StaticDetails.PaymentStatusApproved);
                     _unitOfWork.Save();
                 }
             }
-
-            List<ShoppingCart> shoppingCarts = _unitOfWork.ShoppingCart.GetAll(u => u.ApplicationUserId == orderHeader.ApplicationUserId).ToList();
-            _unitOfWork.ShoppingCart.RemoveRange(shoppingCarts);
-            _unitOfWork.Save();
-            return View(id);
+            return View(orderHeaderId);
         }
 
         [HttpPost]
