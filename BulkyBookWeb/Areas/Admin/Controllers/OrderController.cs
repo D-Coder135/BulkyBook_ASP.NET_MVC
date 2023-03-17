@@ -113,6 +113,10 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
 
                 _unitOfWork.OrderHeader.UpdateStatus(orderHeader.Id, StaticDetails.StatusCancelled, StaticDetails.StatusRefund);
             }
+            else
+            {
+                _unitOfWork.OrderHeader.UpdateStatus(orderHeader.Id, StaticDetails.StatusCancelled, StaticDetails.StatusCancelled);
+            }
 
             _unitOfWork.OrderHeader.Update(orderHeader);
             _unitOfWork.Save();
