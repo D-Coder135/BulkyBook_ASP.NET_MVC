@@ -107,6 +107,11 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
                     Reason = RefundReasons.RequestedByCustomer,
                     PaymentIntent = orderHeader.PaymentIntendId
                 };
+
+                var service = new RefundService();
+                Refund refund = service.Create(options);
+
+                _unitOfWork.OrderHeader.UpdateStatus(orderHeader.Id, StaticDetails.StatusCancelled, StaticDetails.StatusRefund);
             }
 
             _unitOfWork.OrderHeader.Update(orderHeader);
