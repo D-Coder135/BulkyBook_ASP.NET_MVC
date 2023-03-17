@@ -38,6 +38,7 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = StaticDetails.Role_Admin + "," + StaticDetails.Role_Employee)]
         [ValidateAntiForgeryToken]
         public IActionResult UpdateOrderDetails()
         {
