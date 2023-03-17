@@ -86,6 +86,10 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
             orderHeader.Carrier = OrderVM.OrderHeader.Carrier;
             orderHeader.OrderStatus = StaticDetails.StatusShipped;
             orderHeader.ShippingDate = DateTime.Now;
+            if (orderHeader.PaymentStatus == StaticDetails.PaymentStatusDelayedPayment)
+            {
+                orderHeader.PaymentDueDate = DateTime.Now.AddDays(30);
+            }
 
             _unitOfWork.OrderHeader.Update(orderHeader);
             _unitOfWork.Save();
