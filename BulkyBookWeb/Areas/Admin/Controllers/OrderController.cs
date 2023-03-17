@@ -38,7 +38,7 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
             return View(OrderVM);
         }
 
-
+        [ActionName("Details")]
         public IActionResult Details(int orderId)
         {
             OrderVM = new OrderVM()
