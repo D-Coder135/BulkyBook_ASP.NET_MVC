@@ -119,9 +119,8 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
             }
             _unitOfWork.Save();
 
-            _unitOfWork.OrderHeader.Update(orderHeader);
-            _unitOfWork.Save();
-            TempData["Success"] = "Order Shipped Successfully.";
+
+            TempData["Success"] = "Order Cancelled Successfully.";
             return RedirectToAction("Details", "Order", new { orderId = OrderVM.OrderHeader.Id });
         }
 
