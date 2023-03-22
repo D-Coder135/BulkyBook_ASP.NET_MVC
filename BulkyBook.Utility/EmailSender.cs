@@ -17,6 +17,9 @@ namespace BulkyBook.Utility
             emailToSend.To.Add(MailboxAddress.Parse(email));
             emailToSend.Subject = subject;
             emailToSend.Body = new TextPart(MimeKit.Text.TextFormat.Html) { Text = htmlMessage };
+
+            // send email
+
         }
     }
 }
