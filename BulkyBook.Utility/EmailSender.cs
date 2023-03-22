@@ -28,7 +28,7 @@ namespace BulkyBook.Utility
                 emailClient.Disconnect(true);
             }
 
-
+            return Task.CompletedTask;
         }
     }
 }
