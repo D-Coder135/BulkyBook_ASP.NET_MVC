@@ -247,10 +247,6 @@
                                 {
                                     <input type="submit" asp-action="ShipOrder" onclick="return ValidateInput()" class="btn btn-primary form-control my-1" value="Ship Order" />
                                 }
-                                @if (Model.OrderHeader.PaymentStatus == StaticDetails.PaymentStatusDelayedPayment && Model.OrderHeader.OrderStatus == StaticDetails.StatusShipped)
-                                {
-                                    <input type="submit" class="btn btn-success form-control my-1" value="Pay Now" />
-                                }
                                 @if (Model.OrderHeader.OrderStatus != StaticDetails.StatusRefund && Model.OrderHeader.OrderStatus != StaticDetails.StatusCancelled && Model.OrderHeader.OrderStatus != StaticDetails.StatusShipped)
                                 {
                                     <input type="submit" asp-action="CancelOrder" class="btn btn-danger form-control my-1" value="Cancel Order" />
