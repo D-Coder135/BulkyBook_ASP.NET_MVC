@@ -238,9 +238,9 @@
                             </ul>
 
                             @if (Model.OrderHeader.PaymentStatus == StaticDetails.PaymentStatusDelayedPayment && Model.OrderHeader.OrderStatus == StaticDetails.StatusShipped)
-                                {
-                                    <input type="submit" class="btn btn-success form-control my-1" value="Pay Now" />
-                                }
+                            {
+                                <input type="submit" class="btn btn-success form-control my-1" value="Pay Now" />
+                            }
 
                             @if (User.IsInRole(StaticDetails.Role_Admin) || User.IsInRole(StaticDetails.Role_Employee))
                             {
