@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity.UI.Services;
+﻿using MailKit.Net.Smtp;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using MimeKit;
 using System;
 using System.Collections.Generic;
@@ -19,6 +20,14 @@ namespace BulkyBook.Utility
             emailToSend.Body = new TextPart(MimeKit.Text.TextFormat.Html) { Text = htmlMessage };
 
             // send email
+            using (var emailClient = new SmtpClient())
+            {
+                emailClient.Connect("smtp.gmail.com", 587, MailKit.Security.SecureSocketOptions.StartTls);
+                emailClient.Authenticate("devansh1352000@gmail.com", "Keepitsimple@17197");
+                emailClient.Send(emailToSend);
+                emailClient.Disconnect(true);
+            }
+
 
         }
     }
