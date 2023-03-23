@@ -1,4 +1,5 @@
 ﻿@page
+@using BulkyBook.Utility
 @model RegisterModel
 @{
     ViewData["Title"] = "Register";
@@ -57,6 +58,8 @@
                 <label asp-for="Input.ConfirmPassword"></label>
                 <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
             </div>
+            
+
             <div class="form-floating py-2 col-6">
                 <select asp-for="Input.Role" asp-items="@Model.Input.RoleList" class="form-select">
                     <option disabled selected>-Select Role-</option>
