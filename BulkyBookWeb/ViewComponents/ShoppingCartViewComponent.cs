@@ -11,5 +11,10 @@ namespace BulkyBookWeb.ViewComponents
         {
             _unitOfWork = unitOfWork;
         }
+
+        public async Task<IViewComponentResult> InvokeAsync()
+        {
+
+        }
     }
 }
