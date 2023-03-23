@@ -31,6 +31,11 @@ namespace BulkyBookWeb.ViewComponents
                     return View(HttpContext.Session.GetInt32(StaticDetails.SessionCart));
                 }
             }
+            else
+            {
+                HttpContext.Session.Clear();
+                return View(0);
+            }
         }
     }
 }
