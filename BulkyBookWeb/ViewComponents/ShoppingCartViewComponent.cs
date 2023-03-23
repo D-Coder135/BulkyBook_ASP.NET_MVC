@@ -1,6 +1,8 @@
-﻿namespace BulkyBookWeb.ViewComponents
+﻿using Microsoft.AspNetCore.Mvc;
+
+namespace BulkyBookWeb.ViewComponents
 {
-    public class ShoppingCartViewComponent
+    public class ShoppingCartViewComponent : ViewComponent
     {
     }
 }
