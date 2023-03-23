@@ -6,5 +6,10 @@ namespace BulkyBookWeb.ViewComponents
     public class ShoppingCartViewComponent : ViewComponent
     {
         private readonly IUnitOfWork _unitOfWork;
+
+        public ShoppingCartViewComponent(IUnitOfWork unitOfWork)
+        {
+            _unitOfWork = unitOfWork;
+        }
     }
 }
