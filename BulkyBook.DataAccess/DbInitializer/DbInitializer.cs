@@ -1,5 +1,6 @@
 ﻿using BulkyBook.DataAccess.Repository.IRepository;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -32,7 +33,10 @@ namespace BulkyBook.DataAccess.DbInitializer
             //migrations if they are not applied.
             try
             {
-
+                if (_db.Database.GetPendingMigrations().Count() > 0)
+                {
+                    _db.Database.Migrate();
+                }
             }
             catch (Exception ex)
             {
