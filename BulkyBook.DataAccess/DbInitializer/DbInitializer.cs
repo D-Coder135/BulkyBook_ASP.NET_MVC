@@ -10,6 +10,11 @@ namespace BulkyBook.DataAccess.DbInitializer
     {
         public void Initialize()
         {
+            //migrations if they are not applied.
+
+            //create roles if they are not created
+
+            //if roles are not created, then we will create admin user as well.
             throw new NotImplementedException();
         }
     }
