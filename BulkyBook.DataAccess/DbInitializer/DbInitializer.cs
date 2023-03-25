@@ -16,24 +16,15 @@ namespace BulkyBook.DataAccess.DbInitializer
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly ApplicationDbContext _db;
 
-        public RegisterModel(
+        public DbInitializer(
             UserManager<IdentityUser> userManager,
-            IUserStore<IdentityUser> userStore,
-            SignInManager<IdentityUser> signInManager,
-            ILogger<RegisterModel> logger,
-            IEmailSender emailSender,
             RoleManager<IdentityRole> roleManager,
-            IUnitOfWork unitOfWork
+            ApplicationDbContext db
             )
         {
             _userManager = userManager;
-            _userStore = userStore;
-            _emailStore = GetEmailStore();
-            _signInManager = signInManager;
-            _logger = logger;
-            _emailSender = emailSender;
             _roleManager = roleManager;
-            _unitOfWork = unitOfWork;
+            _db = db;
         }
 
         public void Initialize()
