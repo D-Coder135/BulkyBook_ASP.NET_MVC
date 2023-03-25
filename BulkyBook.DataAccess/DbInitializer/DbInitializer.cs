@@ -1,4 +1,5 @@
 ﻿using BulkyBook.DataAccess.Repository.IRepository;
+using BulkyBook.Models;
 using BulkyBook.Utility;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -54,10 +55,23 @@ namespace BulkyBook.DataAccess.DbInitializer
 
                 //if roles are not created, then we will create admin user as well.
 
+                _userManager.CreateAsync(new ApplicationUser
+                {
+                    UserName = "admin@decoder135.com",
+                    Email = "devansh@email.com",
+                    Name = "Devansh K Shukla",
+                    PhoneNumber = "639564987",
+                    StreetAddress = "test 123 Ave",
+                    State = "UP",
+                    PostalCode = "221003",
+                    City = "Varanasi"
+                }, "Admin@123").GetAwaiter().GetResult();
+
+                ApplicationUser user = _db.ApplicationUsers.FirstOrDefault(u => u.Email == "devansh@email.com");
+
+                _userManager.AddToRoleAsync(user, StaticDetails.Role_Admin).GetAwaiter().GetResult();
             }
-
-
-
+            return;
         }
     }
 }
