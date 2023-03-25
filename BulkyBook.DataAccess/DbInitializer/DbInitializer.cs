@@ -14,7 +14,7 @@ namespace BulkyBook.DataAccess.DbInitializer
 
         private readonly UserManager<IdentityUser> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
-        private readonly IUnitOfWork _unitOfWork;
+        private readonly ApplicationDbContext _db;
 
         public RegisterModel(
             UserManager<IdentityUser> userManager,
