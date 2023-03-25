@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BulkyBook.DataAccess.DbInitializer
 {
-    internal interface IDbInitializer
+    public interface IDbInitializer
     {
     }
 }
